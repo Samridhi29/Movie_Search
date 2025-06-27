@@ -1,12 +1,14 @@
 import Image from 'next/image'
 
+type Movie = {
+  Title: string
+  Year: string
+  Poster: string
+  imdbID: string
+}
+
 type Props = {
-  movie: {
-    Title: string
-    Year: string
-    Poster: string
-    imdbID: string
-  }
+  movie: Movie
 }
 
 const MovieCard = ({ movie }: Props) => {

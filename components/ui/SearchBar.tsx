@@ -1,30 +1,32 @@
-'use client';
+'use client'
 
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { Dispatch, SetStateAction } from 'react';
+import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
 
-interface SearchBarProps {
-  searchTerm: string;
-  setSearchTerm: Dispatch<SetStateAction<string>>;
-  handleSearch: () => void;
+type Props = {
+  searchTerm: string
+  setSearchTerm: (value: string) => void
+  handleSearch: () => void
 }
 
-export default function SearchBar({
-  searchTerm,
-  setSearchTerm,
-  handleSearch,
-}: SearchBarProps) {
+const SearchBar = ({ searchTerm, setSearchTerm, handleSearch }: Props) => {
+  const onEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') handleSearch()
+  }
+
   return (
-    <div className="w-full flex gap-2">
+    <div className="flex w-full max-w-xl gap-2">
       <Input
         type="text"
         placeholder="Search for movies..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="flex-1"
+        onKeyDown={onEnter}
       />
       <Button onClick={handleSearch}>Search</Button>
     </div>
-  );
+  )
 }
+
+export default SearchBar
+
