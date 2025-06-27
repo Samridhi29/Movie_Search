@@ -5,7 +5,6 @@ A sleek and responsive movie search application built with:
 - ✅ **Next.js (App Router + TypeScript)**
 - 🎨 **Tailwind CSS**
 - 💎 **Shadcn UI**
-- 🌘 **Dark/Light Mode**
 - 🔎 **OMDB API** (for fetching movie data)
 
 
@@ -13,7 +12,6 @@ A sleek and responsive movie search application built with:
 
 - 🔍 Search movies by title using the OMDB API
 - 🎴 Responsive movie cards with title, year, and poster
-- 🌗 Light and dark mode toggle via `next-themes`
 - ❌ Fallback image when poster is not available
 - 📦 Component-based structure using Shadcn UI
 - ✅ Built with modern Next.js App Router (app directory) and TypeScript
